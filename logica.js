@@ -10,5 +10,4 @@ const calcular = () => {
         lfinal.forEach(a=>{
                 document.write(a)
         })
-        
 }
