@@ -11,21 +11,36 @@ const valoresNuevos = {
         2.5: '2 1/2 kg (Dos kilos y medio)',
         3: '3 kg ',
 }
+let valoresNuevosUnitarios = {
+        1: '1 Pieza de ',
+        2: '2 Piezas de ',
+        3: '3 Piezas de ',
+        4: '4 Piezas de ',
+        5: '5 Piezas de ',
+        6: '6 Piezas de ',
+        7: '7 Piezas de ',
+        8: '8 Piezas de ',
+        9: '9 Piezas de ',
+        10: '10 Piezas de ',
+}
 let precio = {
-        "Jitomate":1,
-        "Cebolla":2,
-        "Tomate":3,
-        "Aguacate":4,
-        "Mango":5,
-        "Papaya":6,
-        "Lechuga":7,
-        "Sandía":8,
-        "Calabaza":9,
-        "Chile Serrano":10,
-        "Uva":11,
-        "Guayaba":12,
-        "Yansenes":13,
-        "Atunes":14,
+        "Ejote":50,
+        "Chile Poblano":28,
+        "Manzana":40,
+        "Mango":30,
+        "Guayaba":30,
+        "Zanahoria":18,
+        "Chile Serrano":32,
+        "Tomate":20,
+        "Jitomate":20,
+        "Cebolla":8,
+        "Morrón":7,
+        "Aguacate":70,
+        "Uva":60,
+}
+let precioU = {
+        "Elote":6,
+        "Melón":40,
 }
 
 const calcular = () => {
@@ -38,11 +53,21 @@ const calcular = () => {
                         lfinal.push("<label>" + valoresNuevos[val[i].value] + " " + nom[i].textContent + "</label><br />");     
                 }
         }
+        const calcularU = () => {
+                const nomU=document.getElementsByClassName('vvu');
+                const valU=document.getElementsByClassName('ppu');
+                for (let j = 0; j < nomU.length; j++) {
+                        if (valU[j].value != 0) {
+                                preciosf.push(precioU[nomU[j].textContent]*valU[j].value);
+                                lfinal.push("<label>" + valoresNuevosUnitarios[valU[j].value] + " " + nomU[j].textContent + "</label><br />");     
+                        }
+                }
+        }
+        calcularU();
         lfinal.forEach(a=>{
                 document.write(a)
         })
         let precioFinal = preciosf.reduce((a,b) => a+b, 0);
-        document.writeln(`<br />Total: \$${precioFinal} pesos`);
+        document.writeln(`<br />Total: <b>\$${precioFinal} </b> pesos`);
         
 }
-

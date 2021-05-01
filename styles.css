@@ -1,0 +1,32 @@
+body{
+    background-image: url(img/frutas.jpg);
+    background-position-x: 50%;
+
+}
+table {
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    width : 200px;
+    border: 3px;
+    border-radius: 5px;
+    border-style: solid;
+}
+button{
+    background-color: rgba(29, 144, 251, 0.89);
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    color: white;
+    border-radius: 2px;
+}
+h1{
+    text-align: center;
+    color: rgb(50, 51, 50);
+}
+td{
+    text-align: center;
+    padding: 5px;
+    text-shadow: 1px 1px 6px black;
+    color: rgb(0, 0, 0);
+}
