@@ -1,4 +1,3 @@
-let lfinal = [];
 const valoresNuevos = {
         .25:'1/4 kg ',
         .5: '1/2 kg ',
@@ -11,7 +10,7 @@ const valoresNuevos = {
         2.5: '2 1/2 kg (Dos kilos y medio)',
         3: '3 kg ',
 }
-let valoresNuevosUnitarios = {
+const valoresNuevosUnitarios = {
         1: '1 Pieza de ',
         2: '2 Piezas de ',
         3: '3 Piezas de ',
@@ -43,31 +42,43 @@ let precioU = {
         "Melón":40,
 }
 
+const nom=document.getElementsByClassName('vv');
+const val=document.getElementsByClassName('pp');
+const nomU=document.getElementsByClassName('vvu');
+const valU=document.getElementsByClassName('ppu');
+let preciosf = [];
+let lfinal = [];
+
 const calcular = () => {
-        const nom=document.getElementsByClassName('vv');
-        const val=document.getElementsByClassName('pp');
-        let preciosf = [];
         for (let i = 0; i < nom.length; i++) {
                 if (val[i].value != 0) {
                         preciosf.push(precio[nom[i].textContent]*val[i].value);
-                        lfinal.push("<label>" + valoresNuevos[val[i].value] + " " + nom[i].textContent + "</label><br />");     
+                        lfinal.push(valoresNuevos[val[i].value] + " " + nom[i].textContent );     
                 }
         }
         const calcularU = () => {
-                const nomU=document.getElementsByClassName('vvu');
-                const valU=document.getElementsByClassName('ppu');
                 for (let j = 0; j < nomU.length; j++) {
                         if (valU[j].value != 0) {
                                 preciosf.push(precioU[nomU[j].textContent]*valU[j].value);
-                                lfinal.push("<label>" + valoresNuevosUnitarios[valU[j].value] + " " + nomU[j].textContent + "</label><br />");     
+                                lfinal.push(valoresNuevosUnitarios[valU[j].value] + " " + nomU[j].textContent);     
                         }
                 }
         }
         calcularU();
-        lfinal.forEach(a=>{
-                document.write(a)
-        })
-        let precioFinal = preciosf.reduce((a,b) => a+b, 0);
-        document.writeln(`<br />Total: <b>\$${precioFinal} </b> pesos`);
         
+        let x = document.createElement("div");
+        x.setAttribute("id", "nprint");
+        document.body.appendChild(x);
+        lfinal.forEach(a=>{
+                let para = document.createElement("p");
+                let t = document.createTextNode(a);
+                para.appendChild(t);
+                let s=document.getElementById("nprint");
+                s.appendChild(para);
+})
+        let precioFinal = preciosf.reduce((a,b) => a+b, 0);
+        let y = document.createElement("div");
+        y.className="nprint-total";
+        y.textContent =(`Total: \$${precioFinal}  pesos`);
+        document.body.appendChild(y);
 }

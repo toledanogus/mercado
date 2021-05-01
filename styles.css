@@ -38,3 +38,26 @@ select{
     border-radius: 10px;
     box-shadow: 2px 2px 6px black;
 }
+#nprint{
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);
+    background-color: rgba(69, 167, 233, 0.9);
+    width: 280px;
+    margin: 0 auto;
+    margin-top: 20px ;
+    padding: 15px;
+    border: 3px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: black;
+    
+}
+.nprint-total{
+    color: rgb(92, 210, 246);
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);
+}
