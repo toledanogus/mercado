@@ -53,6 +53,7 @@ select{
     border-style: solid;
     border-color: black;
     
+    
 }
 .nprint-total{
     color: rgb(92, 210, 246);
@@ -60,4 +61,7 @@ select{
     font-weight: bold;
     font-size: 30px;
     text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);
+}
+span {
+    display: inline-block;
 }

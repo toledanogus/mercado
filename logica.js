@@ -1,3 +1,5 @@
+'use strict';
+
 const valoresNuevos = {
         .25:'1/4 kg ',
         .5: '1/2 kg ',
@@ -20,7 +22,7 @@ const valoresNuevosUnitarios = {
         7: '7 Piezas de ',
         8: '8 Piezas de ',
         9: '9 Piezas de ',
-        10: '10 Piezas de ',
+        10: '10 Piezas de '
 }
 let precio = {
         "Ejote":50,
@@ -39,17 +41,29 @@ let precio = {
 }
 let precioU = {
         "Elote":6,
-        "Melón":40,
+        "Melón":40
 }
 
-const nom=document.getElementsByClassName('vv');
-const val=document.getElementsByClassName('pp');
-const nomU=document.getElementsByClassName('vvu');
-const valU=document.getElementsByClassName('ppu');
-let preciosf = [];
-let lfinal = [];
+const nom=document.getElementsByClassName('vv'),
+      val=document.getElementsByClassName('pp'),
+      nomU=document.getElementsByClassName('vvu'),
+      valU=document.getElementsByClassName('ppu');
+let   preciosf = [],
+      lfinal = [];
 
 const calcular = () => {
+        preciosf = [];
+        lfinal = [];
+        let borrar = document.getElementById('nprint');
+        let borrar2 = document.querySelector('.nprint-total');
+        if (borrar!=null){
+                borrar.remove();
+        }
+        if (borrar2!=null) {
+                borrar2.remove();
+        }
+        
+        
         for (let i = 0; i < nom.length; i++) {
                 if (val[i].value != 0) {
                         preciosf.push(precio[nom[i].textContent]*val[i].value);
@@ -63,22 +77,25 @@ const calcular = () => {
                                 lfinal.push(valoresNuevosUnitarios[valU[j].value] + " " + nomU[j].textContent);     
                         }
                 }
-        }
+        };
         calcularU();
         
         let x = document.createElement("div");
         x.setAttribute("id", "nprint");
         document.body.appendChild(x);
         lfinal.forEach(a=>{
-                let para = document.createElement("p");
+                let para = document.createElement("span");
+                let espacio =document.createElement("br")
                 let t = document.createTextNode(a);
                 para.appendChild(t);
                 let s=document.getElementById("nprint");
                 s.appendChild(para);
-})
+                s.appendChild(espacio);
+        });
         let precioFinal = preciosf.reduce((a,b) => a+b, 0);
         let y = document.createElement("div");
         y.className="nprint-total";
         y.textContent =(`Total: \$${precioFinal}  pesos`);
         document.body.appendChild(y);
+        
 }
